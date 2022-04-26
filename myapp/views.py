@@ -103,3 +103,11 @@ def login(request):
     else:
         return render(request,'login.html')
 
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
+
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
